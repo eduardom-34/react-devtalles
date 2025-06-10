@@ -6,7 +6,8 @@ import './style.css'
 // import './bases/04-array'
 // import './bases/05-functions'
 // import './bases/06-obj-destructuring'
-import './bases/07-array-desestructuring'
+// import './bases/07-array-desestructuring'
+import './bases/08-imp-exp'
 
 
 
