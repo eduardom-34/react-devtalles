@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 interface Props {
   name: string;
@@ -7,12 +8,20 @@ interface Props {
 
 const ItemCounter = (props: Props) => {
 
-  const handleClick = () => {
-    console.log(`Click en ${name}`)
+  const { name, quantity = 1 } = props;
+
+  const [count, setCount] = useState(quantity)
+
+  const handleAdd = () => {
+    setCount(count + 1)
+  }
+  const handleSubtract = () => {
+    if (count === 1) return;
+
+    setCount(count - 1);
   }
 
-  const { name, quantity } = props;
-  // console.log(name);
+
 
   return (
     <section style={{
@@ -27,10 +36,12 @@ const ItemCounter = (props: Props) => {
         }}
       >{name}</span>
       <button
-        onClick={handleClick}
+        onClick={handleAdd}
       >+1</button>
-      <span>{quantity}</span>
-      <button>-1</button>
+      <span>{count}</span>
+      <button
+        onClick={handleSubtract}
+      >-1</button>
     </section>
   )
 }
