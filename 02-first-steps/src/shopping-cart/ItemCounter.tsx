@@ -1,4 +1,15 @@
-const ItemCounter = () => {
+
+interface Props {
+  name: string;
+  quantity?: number;
+}
+
+
+const ItemCounter = (props: Props) => {
+
+  const { name, quantity } = props;
+  console.log(name);
+
   return (
     <section style={{
       display: 'flex',
@@ -10,9 +21,9 @@ const ItemCounter = () => {
         style={{
           width: 150
         }}
-      >Nintendo switch 2</span>
+      >{name}</span>
       <button>+1</button>
-      <span>10</span>
+      <span>{quantity}</span>
       <button>-1</button>
     </section>
   )
