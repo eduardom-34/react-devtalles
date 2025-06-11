@@ -1,16 +1,15 @@
+import ItemCounter from "./shopping-cart/ItemCounter";
 
 
 export function FirstStepsApp() {
   return (
     <>
-      <h1>Hola mundo!!</h1>
-      <p>Esto es un párrafo!!</p>
+      <h1>Carrito de compras</h1>
 
-      <button>Click me</button>
+      <ItemCounter />
+      <ItemCounter />
+      <ItemCounter />
 
-      <div>
-        <h2>Hola dentro de un div</h2>
-      </div>
     </>
   )
 }
