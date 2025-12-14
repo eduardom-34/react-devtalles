@@ -1,0 +1,16 @@
+
+SECCION 6:
+
+CLASE: Manejo del componente de busqueda
+
+cuando una prop se envia y emite algo se le pone onLoQueEmite, ej:
+<SearchBar
+    placeholder="Buscar el mejor Gif"
+    onQuery={(query: string) => handleSearch(query)}
+/>
+
+y cuando maneja algo, por ejemplo maneja ese query se le llama a la funcion handleLoQueManeja, ej:
+
+const handleSearch = (query: string) => {
+    console.log({ query });
+}
