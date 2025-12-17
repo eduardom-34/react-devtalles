@@ -5,9 +5,9 @@ exports[`GifsApp > should render component properly 1`] = `
   <div
     class="content-center"
   >
-    <h2>
+    <h1>
       Buscador de Gifs
-    </h2>
+    </h1>
     <p>
       Descubre y comparte el gif perfecto
     </p>

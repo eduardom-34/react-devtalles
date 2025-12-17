@@ -8,7 +8,7 @@ export const CustomHeader = ({ title, description }: Props) => {
   return (
     <>
       <div className="content-center">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         {
           description && (
 
