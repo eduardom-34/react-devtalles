@@ -23,6 +23,7 @@ describe('MyCounterApp', () => {
   test('shuld render the component', () => {
     render(<MyCounterApp />)
 
+    
     screen.debug();
 
     expect(screen.getByRole('heading', { level: 1 }).innerHTML).toContain(
