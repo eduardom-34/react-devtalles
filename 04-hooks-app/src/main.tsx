@@ -9,6 +9,7 @@ import './index.css'
 // import { TrafficLightWithHook } from './02-useEffect/TrafficLightWithHook'
 import { PokemonPage } from './03-examples/PokemonPage';
 import { FocusScreen } from './useRef/FocusScreen';
+import { TasksApp } from './05-useReducer/TaskApp';
 
 
 createRoot(document.getElementById('root')!).render(
@@ -18,7 +19,8 @@ createRoot(document.getElementById('root')!).render(
     {/* <TrafficLightWithEffect /> */}
     {/* <TrafficLightWithHook /> */}
     {/* < PokemonPage /> */}
-    < FocusScreen />
+    {/* < FocusScreen /> */}
 
+    <TasksApp />
   </StrictMode>,
 )
