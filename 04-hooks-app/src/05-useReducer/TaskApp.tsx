@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import { Plus, Trash2, Check } from 'lucide-react';
 
@@ -12,6 +12,11 @@ export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
   // const [todos, setTodos] = useState<Todo[]>([]);
   const [state, dispatch] = useReducer(taskReducer, getTaskInitialState());
+
+  useEffect(() => {
+    localStorage.setItem('tasks-state', JSON.stringify(state))
+
+  }, [state]);
 
   const addTodo = () => {
 
@@ -34,7 +39,7 @@ export const TasksApp = () => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (inputValue.length === 0) return;
 
-    console.log({ key: e.key });
+    // console.log({ key: e.key });
     if (e.key === 'Enter') {
       addTodo();
     }

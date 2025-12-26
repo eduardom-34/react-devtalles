@@ -14,12 +14,21 @@ interface TaskState {
 
 
 export const getTaskInitialState = (): TaskState => {
-  return {
-    todos: [],
-    length: 0,
-    completed: 0,
-    pending: 0,
-  };
+
+  const localStorageState = localStorage.getItem('tasks-state');
+
+  if (!localStorageState) {
+    return {
+      todos: [],
+      length: 0,
+      completed: 0,
+      pending: 0,
+    };
+  }
+
+  // ! Cuidado, porque el objeto pudo ser modificado
+  return JSON.parse(localStorageState);
+
 }
 
 export type TaskAction =
