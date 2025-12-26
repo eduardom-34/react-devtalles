@@ -12,6 +12,16 @@ interface TaskState {
   pending: number;
 }
 
+
+export const getTaskInitialState = (): TaskState => {
+  return {
+    todos: [],
+    length: 0,
+    completed: 0,
+    pending: 0,
+  };
+}
+
 export type TaskAction =
   | { type: 'ADD_TODO', payload: string }
   | { type: 'TOGGLE_TODO', payload: number }
