@@ -30,20 +30,8 @@ export const ScrambleWords = () => {
     totalWords,
   } = state;
 
-  // const [words, setWords] = useState(shuffleArray(GAME_WORDS));
-
-  // const [currentWord, setCurrentWord] = useState(words[0]);
-  // const [scrambledWord, setScrambledWord] = useState(scrambleWord(currentWord));
-  // const [guess, setGuess] = useState('');
-  // const [points, setPoints] = useState(0);
-  // const [errorCounter, setErrorCounter] = useState(0);
-  // const [maxAllowErrors, setMaxAllowErrors] = useState(3);
-
-  // const [skipCounter, setSkipCounter] = useState(0);
-  // const [maxSkips, setMaxSkips] = useState(3);
-
-  // const [isGameOver, setIsGameOver] = useState(false);
-
+  
+  
   const handleGuessSubmit = (e: React.FormEvent) => {
     // Previene el refresh de la página
     e.preventDefault();
@@ -51,58 +39,24 @@ export const ScrambleWords = () => {
     dispatch({
       type: 'CHECK_ANSWER',
     });
-
-    // Implementar lógica de juego
-    // console.log('Intento de adivinanza:', guess, currentWord);
-
-    // if (guess === currentWord) {
-
-    //   const newWords = words.slice(1);
-    //   confetti({
-    //     particleCount: 100,
-    //     spread: 70,
-    //     origin: { y: 0.6 },
-    //   });
-    //   setPoints(points + 1);
-    //   setGuess('');
-    //   setWords(newWords);
-    //   setCurrentWord(newWords[0]);
-    //   setScrambledWord(scrambleWord(newWords[0]));
-    //   return;
-    // }
-
-    // setErrorCounter(errorCounter + 1);
-    // setGuess('');
-    // if (errorCounter + 1 >= maxAllowErrors) {
-    //   setIsGameOver(true);
-    // }
-
+    
   };
 
   const handleSkip = () => {
-    // if (skipCounter >= maxSkips) return;
 
-    // const updatedWords = words.slice(1);
-
-    // setSkipCounter(skipCounter + 1);
-    // setWords(updatedWords);
-    // setCurrentWord(updatedWords[0]);
-    // setScrambledWord(scrambleWord(updatedWords[0]));
-    // setGuess('');
+    dispatch({
+      type: 'SKIP_WORD',
+    })
+    
   };
 
   const handlePlayAgain = () => {
 
-    // const newArray = shuffleArray(GAME_WORDS);
+    dispatch({
+      type: 'START_NEW_GAME',
+      payload: getInitialState(),
+    })
 
-    // setPoints(0);
-    // setErrorCounter(0);
-    // setGuess('');
-    // setWords(newArray);
-    // setCurrentWord(newArray[0])
-    // setIsGameOver(false);
-    // setSkipCounter(0);
-    // setScrambledWord(scrambleWord(newArray[0]));
 
   };
 
