@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client'
 
 import './index.css'
 import { MemoHook } from './06-memos/MemoHook'
+import { MemoCounter } from './06-memos/MemoCounter'
 // import { TrafficLight } from './01-useState/TrafficLight'
 // import { TrafficLightWithEffect } from './02-useEffect/TrafficLightWithEffect'
 // import { TrafficLightWithHook } from './02-useEffect/TrafficLightWithHook'
@@ -24,8 +25,8 @@ createRoot(document.getElementById('root')!).render(
     {/* < FocusScreen /> */}
     {/* <TasksApp /> */}
     {/* <ScrambleWords /> */}
-    <MemoHook />
-
+    {/* <MemoHook /> */}
+    <MemoCounter />
 
   </StrictMode>,
 )
