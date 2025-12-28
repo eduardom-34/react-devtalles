@@ -2,7 +2,8 @@ import { memo } from "react";
 
 interface Props {
   subtitle: string;
-  callMyAPI(myValue: string): void;
+  // callMyAPI(myValue: string): void;
+  callMyAPI(): void;
 }
 
 
@@ -20,7 +21,7 @@ export const MySubTitle = memo(({ subtitle, callMyAPI }: Props) => {
 
       <button
         className="bg-indigo-500 text-white px-2 py-1 rounded-md cursor-pointer"
-        onClick={() => callMyAPI(subtitle)}
+        onClick={callMyAPI}
       >
         Llamar a funcion
       </button>

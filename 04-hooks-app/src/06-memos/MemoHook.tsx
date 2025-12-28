@@ -2,18 +2,18 @@ import { useCallback, useState } from "react"
 import { MyTitle } from "./ui/MyTitle"
 import { MySubTitle } from "./ui/MySubTitle";
 
-const handleMyAPICall = (myValue: string) => {
-  console.log("Llamar a la API - ", myValue)
-}
+// const handleMyAPICall = (myValue: string) => {
+//   console.log("Llamar a la API - ", myValue)
+// }
 
 export const MemoHook = () => {
 
   const [title, setTitle] = useState("Hola");
   const [subtitle, setSubtitle] = useState("Mi Subtitulo");
 
-  // const handleMyAPICall = useCallback(() => {
-  //   console.log("Llamar a la API - ", subtitle)
-  // }, [subtitle]);
+  const handleMyAPICall = useCallback(() => {
+    console.log("Llamar a la API - ", subtitle)
+  }, [subtitle]);
 
 
   return (
@@ -23,7 +23,7 @@ export const MemoHook = () => {
       <MyTitle title={title} />
       <MySubTitle
         subtitle={subtitle}
-        callMyAPI={ handleMyAPICall}
+        callMyAPI={handleMyAPICall}
       />
 
 
