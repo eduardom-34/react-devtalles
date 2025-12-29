@@ -15,6 +15,7 @@ interface UserContextProps {
   // State
   authStatus: AuthStatus;
   user: User | null;
+  isAuthenticated: boolean;
 
   // Methods
   login: (userId: number) => boolean;
@@ -39,11 +40,11 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
       console.log(`user not found ${userId}`);
       setUser(null);
       setAuthStatus('not-authenticated');
-      localStorage.setItem('userId', userId.toString())
       return false;
     }
     setUser(user);
     setAuthStatus('authenticated');
+    localStorage.setItem('userId', userId.toString());
     return true;
   }
 
@@ -67,6 +68,8 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
   return (
     <UserContext value={{
       authStatus: 'checking',
+      isAuthenticated: authStatus === 'authenticated',
+
       user: user,
       login: handleLogin,
       logout: handleLogout
