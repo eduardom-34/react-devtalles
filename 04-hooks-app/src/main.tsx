@@ -19,6 +19,7 @@ import './index.css'
 import { Toaster } from './components/ui/sonner'
 import { ClientInformation } from './08-use-suspense/ClientInformation'
 import { getUserAction } from './08-use-suspense/api/get-user.action'
+import { ProfessionalApp } from './09-useContext/ProfessionalApp'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -37,13 +38,16 @@ createRoot(document.getElementById('root')!).render(
     {/* <InstagromApp /> */}
     {/* <ClientInformation id={100} /> */}
 
-    <Suspense fallback={(
+    {/* <Suspense fallback={(
       <div className='bg-gradient flex flex-col'>
         <h1 className='text-2xl'>Cargando...</h1>
       </div>
     )}>
 
       <ClientInformation getUser={getUserAction(1000)} />
-    </Suspense>
+    </Suspense> */}
+
+    <ProfessionalApp />
+
   </StrictMode>,
 )
