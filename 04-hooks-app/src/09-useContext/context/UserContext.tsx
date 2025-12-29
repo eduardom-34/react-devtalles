@@ -67,7 +67,7 @@ export const UserContextProvider = ({ children }: PropsWithChildren) => {
 
   return (
     <UserContext value={{
-      authStatus: 'checking',
+      authStatus: authStatus,
       isAuthenticated: authStatus === 'authenticated',
 
       user: user,
