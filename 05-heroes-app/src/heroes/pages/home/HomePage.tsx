@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { useSearchParams } from "react-router"
 
@@ -17,22 +17,18 @@ export const HomePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const activeTab = searchParams.get('tab') ?? 'all';
+  const page = searchParams.get('page') ?? '1';
+  const limit = searchParams.get('limit') ?? '6';
 
   const selectedTab = useMemo(() => {
     const validTabs = ["all", "favorites", "heroes", "villains"];
-
     return validTabs.includes(activeTab) ? activeTab : 'all'
-
   }, [activeTab])
-
-  // const [activeTab, setActiveTab] = useState<
-  //   "all" | "favorites" | "heroes" | "villains"
-  // >("all");
 
 
   const { data: heroesResponse } = useQuery({
     queryKey: ['heroes'],
-    queryFn: () => getHeroesByPageAction(),
+    queryFn: () => getHeroesByPageAction(+page, +limit),
     staleTime: 1000 * 60 * 5, //5 minutos
   });
 
